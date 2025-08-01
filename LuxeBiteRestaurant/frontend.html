@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LuxeBite Restaurant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff5e62, #ff9966);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('images/hero.jpg') no-repeat center/cover;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      background: rgba(255, 94, 98, 0.8);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 15px;
+      font-size: 3em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 1rem;
+      color: #d84315;
+    }
+
+    .menu, .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      border: 1px solid #ffe0b2;
+      border-radius: 12px;
+      padding: 1rem;
+      background: #fff3e0;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #ffd180;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #ffab91;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    input, textarea, button {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    input, textarea {
+      background-color: #fffefc;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff6e7f, #bfe9ff);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #ff3e55, #99d9ff);
+    }
+
+    footer {
+      background: #ff7043;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>LuxeBite</strong></div>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reservation">Reserve</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Experience Gourmet Luxury</h1>
+</div>
+
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu">
+    <div class="card"><h3>Truffle Pasta</h3><p>Delicate and rich with fresh truffles.</p></div>
+    <div class="card"><h3>Wagyu Steak</h3><p>Premium Japanese Wagyu, perfectly seared.</p></div>
+    <div class="card"><h3>Saffron Risotto</h3><p>Creamy and fragrant with saffron threads.</p></div>
+    <div class="card"><h3>Lobster Bisque</h3><p>Classic French style with deep flavors.</p></div>
+    <div class="card"><h3>Foie Gras</h3><p>Pan-seared and elegantly presented.</p></div>
+    <div class="card"><h3>Chocolate Lava Cake</h3><p>Rich molten center with vanilla ice cream.</p></div>
+  </div>
+</section>
+
+<section id="gallery" style="background: #fdf5ef;">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="images/gallery1.jpg" alt="Gallery 1"/>
+    <img src="images/gallery2.jpg" alt="Gallery 2"/>
+    <img src="images/gallery3.jpg" alt="Gallery 3"/>
+    <img src="images/gallery4.jpg" alt="Gallery 4"/>
+    <img src="images/gallery5.jpg" alt="Gallery 5"/>
+    <img src="images/gallery6.jpg" alt="Gallery 6"/>
+  </div>
+</section>
+
+<section id="reservation">
+  <h2>Reserve a Table</h2>
+  <form onsubmit="alert('Thank you! Your reservation was submitted.'); return false;">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <input type="tel" placeholder="Phone Number" required />
+    <input type="date" required />
+    <textarea rows="4" placeholder="Special Requests or Feedback"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> LuxeBite. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
